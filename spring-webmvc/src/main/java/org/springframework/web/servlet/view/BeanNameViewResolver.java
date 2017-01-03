@@ -70,6 +70,7 @@ public class BeanNameViewResolver extends WebApplicationObjectSupport implements
 	public View resolveViewName(String viewName, Locale locale) throws BeansException {
 		ApplicationContext context = getApplicationContext();
 		if (!context.containsBean(viewName)) {
+			//这里的都是框架日志
 			if (logger.isDebugEnabled()) {
 				logger.debug("No matching bean found for view name '" + viewName + "'");
 			}

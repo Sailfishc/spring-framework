@@ -99,7 +99,9 @@ public class SimpleUrlHandlerMapping extends AbstractUrlHandlerMapping {
 	 */
 	@Override
 	public void initApplicationContext() throws BeansException {
+		//调用父类的initApplicationContext方法
 		super.initApplicationContext();
+		//调用父类的registerHandlers方法
 		registerHandlers(this.urlMap);
 	}
 
@@ -125,6 +127,7 @@ public class SimpleUrlHandlerMapping extends AbstractUrlHandlerMapping {
 				if (handler instanceof String) {
 					handler = ((String) handler).trim();
 				}
+				//调用父类的registerHandler(String,Object)方法
 				registerHandler(url, handler);
 			}
 		}
